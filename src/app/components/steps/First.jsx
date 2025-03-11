@@ -10,6 +10,7 @@ export const First = ({}) => {
         </div>
         <input
           type="text"
+          name="firstName"
           placeholder="Your first name"
           className="border-[1px] border-[#CBD5E1] rounded-[8px] p-3 w-[100%]"
         />

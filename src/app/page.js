@@ -5,20 +5,53 @@ import { Button } from "./components/Button";
 import { First } from "./components/steps/First";
 import { Second } from "./components/steps/Second";
 import { useState } from "react";
+import { Third } from "./components/steps/Third";
+import { initialFormValues } from "./constants/values";
+import { Done } from "./components/Done";
 
 export default function Home() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [formValues, setFormValues] = useState(initialFormValues);
+
+  function continueBtn() {
+    setCurrentStep(currentStep + 1);
+  }
+
+  function backBtn() {
+    setCurrentStep(currentStep - 1);
+  }
+
+  const FormNo = [First, Second, Third, Done][currentStep];
+  // const handleChange = (event) => {
+  //   const { value, name } = event.target;
+  //   setFormValues(())
+  // };
+
   return (
     <div className="flex w-screen h-screen items-center justify-center">
-      <div className="flex w-120 h-164 p-8 flex-col justify-between items-start rounded-[8px] bg-[#FFF]">
-        <div className="flex flex-col gap-7">
-          <Header></Header>
-          {currentStep === 1 && <First></First>}
-          {currentStep === 2 && <Second></Second>}
-        </div>
+      {currentStep < 4 && (
+        <div className="flex w-120 h-164 p-8 flex-col justify-between items-start rounded-[8px] bg-[#FFF]">
+          <div className="flex flex-col gap-7">
+            <Header yetDone={true} />
+            {/* {currentStep === 1 && <First />}
+            {currentStep === 2 && <Second />}
+            {currentStep === 3 && <Third />} */}
+            <FormNo />
+          </div>
 
-        <Button nuur={"2/3"}></Button>
-      </div>
+          <Button
+            nuur={currentStep + 1}
+            one={currentStep + 1}
+            onClick={continueBtn}
+            backOnClick={backBtn}
+          />
+        </div>
+      )}
+      {currentStep === 3 && (
+        <div className="flex w-120 h-100% p-8 flex-col justify-between items-start rounded-[8px] bg-[#FFF]">
+          <Header yetDone={false} />
+        </div>
+      )}
     </div>
   );
 }
