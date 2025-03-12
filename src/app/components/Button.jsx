@@ -14,6 +14,7 @@ export const Button = ({ nuur, one, onClick, backOnClick }) => {
           </button>
 
           <button
+            type="submit"
             onClick={onClick}
             className="flex w-[100%] py-2.5 px-3 justify-center items-center gap-1 rounded-[6px] border-[1px] border-[#CBD5E1] bg-[#121316]">
             <p className="text-[#FFF] text-[16px] font-500">{`Continue ${nuur}/3`}</p>{" "}
@@ -23,6 +24,7 @@ export const Button = ({ nuur, one, onClick, backOnClick }) => {
       )}
       {one === 1 && (
         <button
+          type="submit"
           onClick={onClick}
           className="flex w-[100%] py-2.5 px-3 justify-center items-center gap-1 rounded-[6px] border-[1px] border-[#CBD5E1] bg-[#121316]">
           <p className="text-[#FFF] text-[16px] font-500">{`Continue ${nuur}/3`}</p>{" "}
