@@ -18,14 +18,14 @@ export default function Home() {
   function continueBtn() {
     setCurrentStep(currentStep + 1);
     {
-      currentStep === 2 &&
-        (check = formValues.email.includes("@")) === false &&
-        console.log("aldaa");
+      // currentStep === 2 &&
+      //   (check = formValues.email.includes("@")) === false &&
+      //   console.log("aldaa");
 
       if (FormNo === 1) {
-        if (formValues.email.includes("@") && formValues.email.includes(".")) {
-          console.log("zuv");
-        } else {
+        if (
+          !(formValues.email.includes("@") && formValues.email.includes("."))
+        ) {
           console.log("buruu");
         }
       }
