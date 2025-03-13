@@ -8,25 +8,44 @@ import { useState } from "react";
 import { Third } from "./components/steps/Third";
 import { initialFormValues } from "./constants/values";
 import { Done } from "./components/Done";
+import { Aldaa } from "./components/Error";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(0);
 
   const [formValues, setFormValues] = useState(initialFormValues);
-  let check = false;
+  const [errorValues, setErrorValues] = useState(initialFormValues);
 
   function continueBtn() {
-    setCurrentStep(currentStep + 1);
-    {
-      // currentStep === 2 &&
-      //   (check = formValues.email.includes("@")) === false &&
-      //   console.log("aldaa");
+    console.log(formValues.firstName.length, "urt");
 
+    {
+      console.log("y");
+
+      if (currentStep === 0) {
+        console.log("e");
+
+        if (formValues.firstName.length === 0) {
+          console.log("s");
+
+          setErrorValues((prev) => ({ ...prev, firstName: "aldaa" }));
+        } else {
+          setCurrentStep(currentStep + 1);
+        }
+      }
+    }
+    {
       if (FormNo === 1) {
         if (
           !(formValues.email.includes("@") && formValues.email.includes("."))
         ) {
           console.log("buruu");
+          <Aldaa />;
+        } else if (!(formValues.number.length === 8)) {
+          <Aldaa />;
+          <h1>aaa</h1>;
+        } else {
+          setCurrentStep(currentStep + 1);
         }
       }
     }

@@ -1,6 +1,7 @@
+import { Aldaa } from "../Error";
 import { Tseg } from "./Tseg";
 
-export const First = ({ handleChange, formValues }) => {
+export const First = ({ handleChange, formValues, aldaa, errorValues }) => {
   return (
     <div className="flex flex-col gap-3">
       <div>
@@ -16,6 +17,7 @@ export const First = ({ handleChange, formValues }) => {
           placeholder="Your first name"
           className="border-[1px] border-[#CBD5E1] rounded-[8px] p-3 w-[100%]"
         />
+        <Aldaa name={`${errorValues.firstName}`} />
       </div>
 
       <div>

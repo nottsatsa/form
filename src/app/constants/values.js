@@ -3,7 +3,7 @@ export const initialFormValues = {
   lastName: "",
   userName: "",
   email: "",
-  numder: 0,
+  number: "",
   password: "",
   confirmPass: "",
   date: "",

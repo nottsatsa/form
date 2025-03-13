@@ -17,7 +17,7 @@ export const Third = ({ handleChange, formValues }) => {
           className="border-[1px] border-[#CBD5E1] rounded-[8px] p-3 w-[100%] drag-files"
         />
       </div>
-
+      cd ..
       <div>
         <div className="flex gap-0">
           <p>Profile image </p>
