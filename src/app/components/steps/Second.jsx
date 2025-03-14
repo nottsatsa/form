@@ -69,9 +69,9 @@ export const Second = ({
           className="border-[1px] border-[#CBD5E1] rounded-[8px] p-3 w-[100%]"
         />
       </div>
-      <button className="flex w-42 py-2.5 px-3 justify-center items-center gap-1 rounded-[6px] border-[1px] border-[#CBD5E1]">
+      {/* <button className="flex w-42 py-2.5 px-3 justify-center items-center gap-1 rounded-[6px] border-[1px] border-[#CBD5E1]">
         submit
-      </button>
+      </button> */}
     </form>
   );
 };
